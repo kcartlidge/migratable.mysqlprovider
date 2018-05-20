@@ -34,7 +34,7 @@ namespace Migratable.Providers
                 "  PRIMARY KEY  (`id`)" +
                 ")"
             );
-            v = ExecuteScalar("select version_number from version order by actioned desc limit 1");
+            v = ExecuteScalar("select version_number from version order by id desc limit 1");
             if (v == null)
             {
                 SetVersion(0);

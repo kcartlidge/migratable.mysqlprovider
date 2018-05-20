@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="Migratable" Version="1.1.0" />
-    <PackageReference Include="Migratable.MySqlProvider" Version="1.1.0" />
+    <PackageReference Include="Migratable.MySqlProvider" Version="1.1.1" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -19,6 +19,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="migrations\001 Create accounts table\down.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="migrations\002 Populate sample accounts\up.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="migrations\002 Populate sample accounts\down.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

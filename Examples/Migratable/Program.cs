@@ -20,15 +20,24 @@ namespace Example
                 "password=test;" +
                 "database=migratable_test;" +
                 "SslMode=none");
+
+            var migrator = new Migratable.Migrator(provider);
+            migrator.LoadMigrations("./migrations");
+
             Console.WriteLine("Getting version");
             var version = provider.GetVersion();
-            Console.WriteLine("Current database version: {0}", version);
-            Console.WriteLine("Incrementing the version number");
-            var sql = "insert into `version` (`version_number`) values ({0})";
-            provider.Execute(string.Format(sql, version + 1));
-            version = provider.GetVersion();
-            Console.WriteLine("Current database version: {0}", version);
-            Console.WriteLine();
+
+            Console.WriteLine("Moving to version 1");
+            migrator.SetVersion(1);
+            Console.WriteLine("Version {0}", provider.GetVersion());
+
+            Console.WriteLine("Moving to version 2");
+            migrator.SetVersion(2);
+            Console.WriteLine("Version {0}", provider.GetVersion());
+
+            Console.WriteLine("Rolling back to version 1");
+            migrator.RollBackward(1);
+            Console.WriteLine("Version {0}", provider.GetVersion());
         }
     }
 }
