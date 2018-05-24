@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeBuildOutput>true</IncludeBuildOutput>
-    <VersionPrefix>1.1.1</VersionPrefix>
+    <VersionPrefix>2.0.0</VersionPrefix>
     <Product>Migratable.MySqlProvider</Product>
     <Company>K Cartlidge</Company>
     <Title>Migratable.MySqlProvider</Title>

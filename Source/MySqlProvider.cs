@@ -27,14 +27,14 @@ namespace Migratable.Providers
         public int GetVersion()
         {
             var v = ExecuteScalar(
-                "create table if not exists `version` ( " +
+                "create table if not exists `migratable_version` ( " +
                 "  `id` int(11) NOT NULL auto_increment," +
                 "  `version_number` INT(11) NOT NULL, " +
                 "  `actioned` TIMESTAMP NOT NULL, " +
                 "  PRIMARY KEY  (`id`)" +
                 ")"
             );
-            v = ExecuteScalar("select version_number from version order by id desc limit 1");
+            v = ExecuteScalar("select version_number from migratable_version order by id desc limit 1");
             if (v == null)
             {
                 SetVersion(0);
@@ -45,7 +45,7 @@ namespace Migratable.Providers
 
         public void SetVersion(int versionNumber)
         {
-            var sql = "insert into `version` (`version_number`) values ({0})";
+            var sql = "insert into `migratable_version` (`version_number`) values ({0})";
             Execute(string.Format(sql, versionNumber));
         }
 

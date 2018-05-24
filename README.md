@@ -1,16 +1,20 @@
 # Migratable.MySqlProvider
 
-Database provider for [https://github.com/kcartlidge/migratable](Migratable) adding support for *MySql*/*MariaDB*.
+Database provider for https://github.com/kcartlidge/migratable adding support for *MySql*/*MariaDB*.
+
+## Installation
+
+Both this provider and the main Migratable are on Nuget.
 
 ## Usage
 
-See [https://github.com/kcartlidge/migratable](Migratable) for more details, including nuget.
+See https://github.com/kcartlidge/migratable for more details, including nuget.
 
 ``` cs
-var provider = new Migratable.MySqlProvider("your-connection-string");
+var provider = new Migratable.Providers.MySqlProvider("connection-string");
 var migrator = new Migratable.Migrator(provider);
 migrator.LoadMigrations("./migrations");
-migrator.RollForward(5);
+migrator.SetVersion(5);
 ```
 
 ## Examples
