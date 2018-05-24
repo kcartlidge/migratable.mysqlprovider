@@ -24,7 +24,7 @@ namespace Example
             var version = provider.GetVersion();
             Console.WriteLine("Current database version: {0}", version);
             Console.WriteLine("Incrementing the version number");
-            var sql = "insert into `version` (`version_number`) values ({0})";
+            var sql = "insert into `migratable_version` (`version_number`) values ({0})";
             provider.Execute(string.Format(sql, version + 1));
             version = provider.GetVersion();
             Console.WriteLine("Current database version: {0}", version);

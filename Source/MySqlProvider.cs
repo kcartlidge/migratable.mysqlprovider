@@ -18,8 +18,19 @@ namespace Migratable.Providers
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
+                var transaction = conn.BeginTransaction();
                 var cmd = new MySqlCommand(instructions, conn);
-                cmd.ExecuteNonQuery();
+                cmd.Transaction = transaction;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    throw;
+                }
                 conn.Close();
             }
         }
