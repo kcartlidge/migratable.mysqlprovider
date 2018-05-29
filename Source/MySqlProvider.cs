@@ -41,7 +41,8 @@ namespace Migratable.Providers
                 "create table if not exists `migratable_version` ( " +
                 "  `id` int(11) NOT NULL auto_increment," +
                 "  `version_number` INT(11) NOT NULL, " +
-                "  `actioned` TIMESTAMP NOT NULL, " +
+                "  `actioned` TIMESTAMP NOT NULL " +
+                "    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, " +
                 "  PRIMARY KEY  (`id`)" +
                 ")"
             );
