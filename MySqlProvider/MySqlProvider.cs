@@ -3,15 +3,21 @@ using MySql.Data.MySqlClient;
 
 namespace Migratable.Providers
 {
+    /// <summary>Database provider for use with Migratable.</summary>
     public class MySqlProvider : IProvider
     {
         private readonly string connectionString;
 
+        /// <summary>Create a database provider for use with Migratable.</summary>
         public MySqlProvider(string connectionString)
         {
             this.connectionString = connectionString;
         }
 
+        /// <summary>
+        /// User-friendly description of this connection.
+        /// No connection string credentials are included.
+        /// </summary>
         public string Describe()
         {
             using (var conn = new MySqlConnection(connectionString))
@@ -20,6 +26,10 @@ namespace Migratable.Providers
             }
         }
 
+        /// <summary>
+        /// Run a given SQL statement (in a transaction).
+        /// If there is an error the transaction is rolled back.
+        /// </summary>
         public void Execute(string instructions)
         {
             using (var conn = new MySqlConnection(connectionString))
@@ -42,6 +52,7 @@ namespace Migratable.Providers
             }
         }
 
+        /// <summary>Gets the migration version number.</summary>
         public int GetVersion()
         {
             var v = ExecuteScalar(
@@ -62,6 +73,7 @@ namespace Migratable.Providers
             return (int)v;
         }
 
+        /// <summary>Sets the migration version number.</summary>
         public void SetVersion(int versionNumber)
         {
             var sql = "insert into `migratable_version` (`version_number`) values ({0})";

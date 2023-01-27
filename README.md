@@ -21,5 +21,5 @@ migrator.SetVersion(5);
 
 ## MIT Licence
 
-Copyright (c) 2019 K Cartlidge.
-See ```LICENCE``` file for details.
+Copyright (c) 2023 K Cartlidge.
+See `LICENCE` file for details.

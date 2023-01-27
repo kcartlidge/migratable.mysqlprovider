@@ -1,32 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <IncludeBuildOutput>true</IncludeBuildOutput>
-    <VersionPrefix>2.1.2</VersionPrefix>
-    <Product>Migratable.MySqlProvider</Product>
-    <Company>K Cartlidge</Company>
-    <Title>Migratable.MySqlProvider</Title>
-    <Authors>K Cartlidge</Authors>
-    <Description>Database provider for kcartlidge/migratable adding support for MySql/MariaDB</Description>
-    <Copyright>K Cartlidge</Copyright>
-    <PackageLicenceUrl>https://opensource.org/licenses/MIT</PackageLicenceUrl>
-    <PackageProjectUrl>https://github.com/kcartlidge/migratable.mysqlprovider</PackageProjectUrl>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageTags>migratable,mysql,mariadb,migrations,database,dotnet core</PackageTags>
-    <PackageReleaseNotes></PackageReleaseNotes>
-    <RepositoryUrl>https://github.com/kcartlidge/migratable.mysqlprovider</RepositoryUrl>
-    <Summary>Database provider for kcartlidge/migratable adding support for MySql/MariaDB.</Summary>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Migratable" Version="2.1.0" />
-    <PackageReference Include="MySql.Data" Version="8.0.11" />
-  </ItemGroup>
-
-  <PropertyGroup>
-    <RestoreSources>$(RestoreSources);https://api.nuget.org/v3/index.json;http://apiint.nugettest.org/v3/index.json</RestoreSources>
-  </PropertyGroup>
-
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IncludeBuildOutput>true</IncludeBuildOutput>
+		<VersionPrefix>2.2.0</VersionPrefix>
+		<Product>Migratable.MySqlProvider</Product>
+		<Company>K Cartlidge</Company>
+		<Title>Migratable.MySqlProvider</Title>
+		<Authors>K Cartlidge</Authors>
+		<Description>Database provider for kcartlidge/migratable adding support for MySql/MariaDB</Description>
+		<Copyright>K Cartlidge</Copyright>
+		<PackageLicenceUrl>https://opensource.org/licenses/MIT</PackageLicenceUrl>
+		<PackageProjectUrl>https://github.com/kcartlidge/migratable.mysqlprovider</PackageProjectUrl>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageTags>migratable,mysql,mariadb,migrations,database,dotnet core</PackageTags>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENCE</PackageLicenseFile>
+		<PackageReleaseNotes>
+		</PackageReleaseNotes>
+		<RepositoryUrl>https://github.com/kcartlidge/migratable.mysqlprovider</RepositoryUrl>
+		<Summary>Database provider for kcartlidge/migratable adding support for MySql/MariaDB.</Summary>
+		<Version>2.2.0</Version>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Migratable" Version="2.2.0" />
+		<PackageReference Include="MySql.Data" Version="8.0.32" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="../README.md" Pack="true" PackagePath="" />
+		<None Include="../LICENCE" Pack="true" PackagePath="" />
+	</ItemGroup>
+	<PropertyGroup>
+		<RestoreSources>$(RestoreSources);https://api.nuget.org/v3/index.json;https://apiint.nugettest.org/v3/index.json</RestoreSources>
+	</PropertyGroup>
 </Project>
